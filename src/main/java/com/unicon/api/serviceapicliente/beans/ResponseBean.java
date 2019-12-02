@@ -35,7 +35,7 @@ public class ResponseBean implements Serializable {
      */
     public static final byte STATUS_EXCEPTION = -2;
 
-    protected int id;
+    protected Integer id;
     protected String codigo;
     protected byte estado;
     protected String mensaje;
@@ -61,11 +61,11 @@ public class ResponseBean implements Serializable {
                 '}';
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
