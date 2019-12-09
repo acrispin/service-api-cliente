@@ -10,7 +10,7 @@
             <DefaultRolloverStrategy max="9"/>
         </RollingFile>
         <Console name="Console" target="SYSTEM_OUT">
-            <PatternLayout pattern="%p [service-api-cliente] [%d{yyyyMMdd HH:mm:ss.SSS}] - %-12C{} -%L - %m%n" />
+            <PatternLayout pattern="%p [service-api-cliente] [%d{yyyyMMdd HH:mm:ss.SSS}] - %-12C{1} -%L - %m%n" />
         </Console>
     </Appenders>
     <Loggers>
@@ -26,15 +26,15 @@
             <AppenderRef ref="RollingFile"/>
             <AppenderRef ref="Console"/>
         </Logger>
-        <Logger name="org.springframework.boot" level="error" additivity="false">
+        <Logger name="org.springframework.boot" level="info" additivity="false">
             <AppenderRef ref="RollingFile"/>
             <AppenderRef ref="Console"/>
         </Logger>
-        <Logger name="org.springframework.test.context" level="error" additivity="false">
+        <Logger name="org.springframework.test.context" level="info" additivity="false">
             <AppenderRef ref="RollingFile"/>
             <AppenderRef ref="Console"/>
         </Logger>
-        <Logger name="org.springframework.beans.factory.support" level="error" additivity="false">
+        <Logger name="org.springframework.beans.factory.support" level="info" additivity="false">
             <AppenderRef ref="RollingFile"/>
             <AppenderRef ref="Console"/>
         </Logger>
@@ -46,7 +46,7 @@
             <AppenderRef ref="RollingFile"/>
             <AppenderRef ref="Console"/>
         </Logger>
-        <Logger name="com.netflix.discovery" level="info" additivity="false">
+        <Logger name="com.netflix.discovery" level="error" additivity="false">
             <AppenderRef ref="RollingFile"/>
             <AppenderRef ref="Console"/>
         </Logger>
