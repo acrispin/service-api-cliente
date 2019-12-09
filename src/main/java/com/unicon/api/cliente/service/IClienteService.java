@@ -6,6 +6,6 @@ import java.util.List;
 
 public interface IClienteService {
 
-    public List<ClienteBean> obtenerClientes();
+    List<ClienteBean> obtenerClientes();
 
 }

@@ -12,6 +12,10 @@ import java.util.List;
 @Log4j2
 public class ClienteDao extends DaoApplication<ClienteBean, IClienteMapper> {
 
+    /**
+     *
+     * @param idMarca
+     */
     public ClienteDao(String idMarca) {
         super(idMarca);
     }
@@ -50,6 +54,10 @@ public class ClienteDao extends DaoApplication<ClienteBean, IClienteMapper> {
         return IClienteMapper.class;
     }
 
+    /**
+     * Obtiene lista de clientes por marca
+     * @return Lista de clientes
+     */
     public List<ClienteBean> selectClientesByName() {
         return queryList("selectClientesByName");
     }

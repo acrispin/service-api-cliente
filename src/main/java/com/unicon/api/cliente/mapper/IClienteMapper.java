@@ -5,5 +5,7 @@ import com.unicon.api.cliente.beans.ClienteBean;
 import java.util.List;
 
 public interface IClienteMapper {
-    public List<ClienteBean> selectClientesByName();
+
+    List<ClienteBean> selectClientesByName();
+
 }
