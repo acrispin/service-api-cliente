@@ -1,4 +1,4 @@
-package com.unicon.api.serviceapicliente;
+package com.unicon.api.cliente;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;

@@ -1,4 +1,4 @@
-package com.unicon.api.serviceapicliente;
+package com.unicon.api.cliente;
 
 import com.unicon.api.commons.db.dao.DaoApplication;
 import com.unicon.api.commons.db.dao.mapper.AppMapper;

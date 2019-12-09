@@ -1,8 +1,8 @@
-package com.unicon.api.serviceapicliente.controller;
+package com.unicon.api.cliente.controller;
 
-import com.unicon.api.serviceapicliente.beans.ContactoBean;
-import com.unicon.api.serviceapicliente.beans.ResponseBean;
-import com.unicon.api.serviceapicliente.beans.ResponseContactoBean;
+import com.unicon.api.cliente.beans.ContactoBean;
+import com.unicon.api.cliente.beans.ResponseBean;
+import com.unicon.api.cliente.beans.ResponseContactoBean;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;

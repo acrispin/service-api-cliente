@@ -1,4 +1,4 @@
-package com.unicon.api.serviceapicliente.beans;
+package com.unicon.api.cliente.beans;
 
 import java.io.Serializable;
 
