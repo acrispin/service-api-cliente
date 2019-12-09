@@ -77,6 +77,6 @@
 
     <mappers>
         <mapper class="com.unicon.api.commons.db.dao.mapper.AppMapper"/>
-        <!--        <mapper resource="com/unicon/api/commons/db/dao/xml/AppMapper.xml" />-->
+        <mapper resource="mybatis/mappers/cliente/Cliente.xml" />
     </mappers>
 </configuration>

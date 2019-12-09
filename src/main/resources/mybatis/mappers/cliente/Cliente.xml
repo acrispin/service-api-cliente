@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.unicon.api.cliente.mapper.IClienteMapper">
+
+    <!--@since 20191209 ACRISPIN | Mapper para clientes-->
+    <resultMap id="selectClientesByNameMap" type="com.unicon.api.cliente.beans.ClienteBean">
+        <result property="codigo" column="codigo"/>
+        <result property="razonSocial" column="razonSocial"/>
+        <result property="direccion" column="direccion"/>
+        <result property="codigoPostal" column="codigoPostal"/>
+        <result property="telefono" column="telefono"/>
+        <result property="tipoCalle" column="tipoCalle"/>
+        <result property="numeroCalle" column="numeroCalle"/>
+        <result property="nombreUrbanizacion" column="nombreUrbanizacion"/>
+        <result property="tipoDocumento" column="tipoDocumento"/>
+        <result property="numeroDocumento" column="numeroDocumento"/>
+    </resultMap>
+
+    <select id="selectClientesByName" parameterType="java.util.Map" resultMap="selectClientesByNameMap">
+        select top 100
+            co_cli as codigo,
+            no_cli as razonSocial,
+            di_cli as direccion,
+            co_pos_cli as codigoPostal,
+            te_cli as telefono,
+            ti_cal as tipoCalle,
+            nu_cal as numeroCalle,
+            no_urb as nombreUrbanizacion,
+            ti_doc as tipoDocumento,
+            nu_doc as numeroDocumento,
+            apellidopaterno as apellidoPaterno,
+            apellidomaterno as apellidoMaterno,
+            nombres as nombre,
+            co_aut_ven as codigoVendedor,
+            es_cli as estado,
+            fe_ing_cli
+        from SQLCOP04.dbo.cli (nolock)
+        order by fe_ing_cli desc
+    </select>
+
+</mapper>

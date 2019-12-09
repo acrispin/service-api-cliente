@@ -10,23 +10,19 @@
             <DefaultRolloverStrategy max="9"/>
         </RollingFile>
         <Console name="Console" target="SYSTEM_OUT">
-            <PatternLayout pattern="%p [service-api-cliente] [%d{yyyyMMdd HH:mm:ss.SSS}] - %-12C{1} -%L - %m%n" />
+            <PatternLayout pattern="%p [service-api-cliente] [%d{yyyyMMdd HH:mm:ss.SSS}] - %-12C{} -%L - %m%n" />
         </Console>
     </Appenders>
     <Loggers>
-        <Root level="DEBUG">
-            <AppenderRef ref="RollingFile"/>
-            <AppenderRef ref="Console"/>
-        </Root>
-        <Logger name="org.apache.ibatis" level="ERROR" additivity="false">
+        <Logger name="org.apache.ibatis" level="error" additivity="false">
             <AppenderRef ref="RollingFile"/>
             <AppenderRef ref="Console"/>
         </Logger>
-        <Logger name="org.apache.ibatis.logging.jdbc" level="ERROR" additivity="false">
+        <Logger name="org.apache.ibatis.logging.jdbc" level="error" additivity="false">
             <AppenderRef ref="RollingFile"/>
             <AppenderRef ref="Console"/>
         </Logger>
-        <Logger name="java.sql" level="ERROR" additivity="false">
+        <Logger name="java.sql" level="error" additivity="false">
             <AppenderRef ref="RollingFile"/>
             <AppenderRef ref="Console"/>
         </Logger>
@@ -42,5 +38,21 @@
             <AppenderRef ref="RollingFile"/>
             <AppenderRef ref="Console"/>
         </Logger>
+        <Logger name="org.apache.http" level="error" additivity="false">
+            <AppenderRef ref="RollingFile"/>
+            <AppenderRef ref="Console"/>
+        </Logger>
+        <Logger name="org.hibernate.validator" level="error" additivity="false">
+            <AppenderRef ref="RollingFile"/>
+            <AppenderRef ref="Console"/>
+        </Logger>
+        <Logger name="com.netflix.discovery" level="info" additivity="false">
+            <AppenderRef ref="RollingFile"/>
+            <AppenderRef ref="Console"/>
+        </Logger>
+        <Root level="DEBUG">
+            <AppenderRef ref="RollingFile"/>
+            <AppenderRef ref="Console"/>
+        </Root>
     </Loggers>
 </Configuration>

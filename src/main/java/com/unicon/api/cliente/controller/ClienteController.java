@@ -5,8 +5,10 @@ import java.util.List;
 
 import com.unicon.api.cliente.beans.ClienteBean;
 import com.unicon.api.cliente.beans.ResponseBean;
+import com.unicon.api.cliente.service.IClienteService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,15 +19,13 @@ public class ClienteController {
 
     private static Logger log = LoggerFactory.getLogger(ClienteController.class);
 
+    @Autowired
+    public IClienteService clienteService;
+
     @GetMapping("")
     public List<ClienteBean> getClientes() {
         log.info("listar clientes");
-        List<ClienteBean> list = new ArrayList<>();
-        list.add(new ClienteBean(1, "24872525983", "RUC", "Cliente 001", "ACT"));
-        list.add(new ClienteBean(1, "73473457774", "RUC", "Cliente 002", "ACT"));
-        list.add(new ClienteBean(1, "89357474575", "RUC", "Cliente 003", "ACT"));
-        list.add(new ClienteBean(1, "23452634664", "RUC", "Cliente 004", "ACT"));
-        return list;
+        return clienteService.obtenerClientes();
     }
 
     @PostMapping("")
