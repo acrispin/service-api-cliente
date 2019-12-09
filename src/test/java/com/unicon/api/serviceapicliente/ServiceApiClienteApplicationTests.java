@@ -1,7 +1,7 @@
 package com.unicon.api.serviceapicliente;
 
-import com.unicon.api.serviceapicommons.dao.DaoApplication;
-import com.unicon.api.serviceapicommons.dao.mapper.AppMapper;
+import com.unicon.api.commons.db.dao.DaoApplication;
+import com.unicon.api.commons.db.dao.mapper.AppMapper;
 import lombok.extern.log4j.Log4j2;
 import org.apache.ibatis.exceptions.PersistenceException;
 import org.apache.ibatis.session.SqlSession;
@@ -16,7 +16,7 @@ class ServiceApiClienteApplicationTests {
 	void contextLoads() {
 		log.info("test -----------");
 		String server = "", username = "", sessionId = "", enviroment = "";
-		try (SqlSession session = DaoApplication.getSqlSessionFactory2().openSession(true)) {
+		try (SqlSession session = DaoApplication.getSqlSessionFactory().openSession(true)) {
 			AppMapper mapper = session.getMapper(AppMapper.class);
 			server = mapper.selectServer();
 			username = mapper.selectUsername();

@@ -12,40 +12,40 @@
         <setting name="multipleResultSetsEnabled" value="true"/>
     </settings>
 
-<!--    <typeAliases>-->
-<!--        <typeAlias alias="basebean" type="com.unicon.bean.BaseBean"/>-->
-<!--        <package name="com.unicon.cs.bean"/>-->
-<!--    </typeAliases>-->
+    <!--    <typeAliases>-->
+    <!--        <typeAlias alias="basebean" type="com.unicon.bean.BaseBean"/>-->
+    <!--        <package name="com.unicon.cs.bean"/>-->
+    <!--    </typeAliases>-->
 
     <environments default="single">
         <environment id="single">
             <transactionManager type="JDBC"/>
             <dataSource type="JNDI">
-                <property name="data_source" value="jdbc/POL-SDC-TOAT"/>
+                <property name="data_source" value="jdbc/SF-SDC-TOAT"/>
             </dataSource>
         </environment>
         <environment id="1-sdc">
             <transactionManager type="JDBC"/>
             <dataSource type="JNDI">
-                <property name="data_source" value="jdbc/POL-SDC-UNI"/>
+                <property name="data_source" value="jdbc/SF-SDC-UNI"/>
             </dataSource>
         </environment>
         <environment id="2-sdc">
             <transactionManager type="JDBC"/>
             <dataSource type="JNDI">
-                <property name="data_source" value="jdbc/POL-SDC-CMX"/>
+                <property name="data_source" value="jdbc/SF-SDC-CMX"/>
             </dataSource>
         </environment>
         <environment id="1-cmd">
             <transactionManager type="JDBC"/>
             <dataSource type="JNDI">
-                <property name="data_source" value="jdbc/POL-CMD-UNI"/>
+                <property name="data_source" value="jdbc/SF-CMD-UNI"/>
             </dataSource>
         </environment>
         <environment id="2-cmd">
             <transactionManager type="JDBC"/>
             <dataSource type="JNDI">
-                <property name="data_source" value="jdbc/POL-CMD-CMX"/>
+                <property name="data_source" value="jdbc/SF-CMD-CMX"/>
             </dataSource>
         </environment>
         <environment id="pooled">
@@ -76,7 +76,7 @@
     </environments>
 
     <mappers>
-        <mapper class="com.unicon.api.serviceapicommons.dao.mapper.AppMapper"/>
-<!--        <mapper resource="com/unicon/pol/ds/mapper/xml/sdc/Entidades.xml" />-->
+        <mapper class="com.unicon.api.commons.db.dao.mapper.AppMapper"/>
+        <!--        <mapper resource="com/unicon/api/commons/db/dao/xml/AppMapper.xml" />-->
     </mappers>
 </configuration>
