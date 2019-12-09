@@ -12,11 +12,6 @@
         <setting name="multipleResultSetsEnabled" value="true"/>
     </settings>
 
-    <!--    <typeAliases>-->
-    <!--        <typeAlias alias="basebean" type="com.unicon.bean.BaseBean"/>-->
-    <!--        <package name="com.unicon.cs.bean"/>-->
-    <!--    </typeAliases>-->
-
     <environments default="single">
         <environment id="single">
             <transactionManager type="JDBC"/>
