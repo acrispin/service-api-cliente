@@ -34,7 +34,7 @@ class ServiceApiClienteApplicationTests {
 		log.info("sessionId: " + sessionId);
 		log.info("enviroment: " + enviroment);
 
-		List<ClienteBean> lista = new ClienteDao("1").selectClientesByName();
+		List<ClienteBean> lista = new ClienteDao(1).selectClientesByName();
 		log.info("size lista: " + lista.size());
 	}
 

@@ -1,6 +1,5 @@
 package com.unicon.api.cliente.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import com.unicon.api.cliente.beans.ClienteBean;
@@ -11,7 +10,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-
 
 @RestController
 @RequestMapping("/")
@@ -32,26 +30,14 @@ public class ClienteController {
     @ResponseStatus(HttpStatus.OK)
     public ResponseBean crear(@RequestBody ClienteBean cliente) {
         log.info("crear cliente: " + cliente.toString());
-        ResponseBean response = new ResponseBean();
-        response.setId(0);
-        response.setEstado(ResponseBean.STATUS_CREADO);
-        response.setCodigo("045711");
-        response.setMensaje("OK");
-        response.setResultado(true);
-        return response;
+        return clienteService.crearCliente(cliente);
     }
 
     @PutMapping("")
     @ResponseStatus(HttpStatus.OK)
     public ResponseBean actualizar(@RequestBody ClienteBean cliente) {
         log.info("actualizar cliente: " + cliente.toString());
-        ResponseBean response = new ResponseBean();
-        response.setId(0);
-        response.setEstado(ResponseBean.STATUS_MODIFICADO);
-        response.setCodigo("045711");
-        response.setMensaje("OK");
-        response.setResultado(true);
-        return response;
+        return clienteService.actualizarCliente(cliente);
     }
 
 }

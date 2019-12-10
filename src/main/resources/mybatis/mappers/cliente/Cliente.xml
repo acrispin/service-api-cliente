@@ -38,4 +38,65 @@
         order by fe_ing_cli desc
     </select>
 
+    <!--@since 20191209 ACRISPIN | Mapper para clientes-->
+    <resultMap id="selectResultTypeMap" type="com.unicon.api.cliente.beans.ResponseBean">
+        <result property="estado" column="status"/>
+        <result property="codigo" column="codigo"/>
+        <result property="resultado" column="resultado"/>
+        <result property="mensaje" column="mensaje"/>
+    </resultMap>
+
+    <!--@since 20191209 ACRISPIN | Mapper para clientes-->
+    <select id="registrarCliente"
+            parameterType="java.util.Map"
+            resultMap="selectResultTypeMap">
+        EXEC [api].[usp_registra_cliente]
+            @v_co_cli = #{codigo},
+            @rz_soc = #{razonSocial},
+            @di_obr = #{direccion},
+            @co_pos = #{codigoPostal},
+            @te_cli = #{telefono},
+            @ti_cal = #{tipoCalle},
+            @nu_cal = #{numeroCalle},
+            @no_urb = #{nombreUrbanizacion},
+            @ti_doc = #{tipoDocumento},
+            @nu_doc = #{numeroDocumento},
+            @ap_pat = #{apellidoPaterno},
+            @ap_mat = #{apellidoMaterno},
+            @nombre = #{nombre},
+            @cod_ve = #{codigoVendedor},
+            @estado = #{estado},
+            @co_ext = #{codigoExterno}
+    </select>
+
+    <!--@since 20191209 ACRISPIN | Mapper para clientes-->
+    <resultMap id="selectResultTypeContactoMap" type="com.unicon.api.cliente.beans.ResponseContactoBean">
+        <result property="codigoCliente" column="codigo_cliente"/>
+        <result property="secuencia" column="secuencia"/>
+        <result property="codigoUsuario" column="codigo_usuario"/>
+        <result property="estado" column="status"/>
+        <result property="resultado" column="resultado"/>
+        <result property="mensaje" column="mensaje"/>
+    </resultMap>
+
+    <!--@since 20191209 ACRISPIN | Mapper para clientes-->
+    <select id="registrarClienteContacto"
+            parameterType="java.util.Map"
+            resultMap="selectResultTypeContactoMap">
+        EXEC [api].[usp_registra_cliente_contacto]
+            @co_cli = #{codigoCliente},
+            @v_se_rcl = #{secuencia},
+            @nombre = #{nombre},
+            @cargo = #{cargo},
+            @tl = #{telefono},
+            @tl2 = #{telefono2},
+            @email = #{email},
+            @dni = #{dni},
+            @in_fact_elec = #{indicadorFacturacionElectronica},
+            @aplld = #{apellido},
+            @co_ext = #{codigoExterno},
+            @estado = #{estado},
+            @co_usu = #{codigoUsuario}
+    </select>
+
 </mapper>

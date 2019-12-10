@@ -1,6 +1,9 @@
 package com.unicon.api.cliente.dao;
 
 import com.unicon.api.cliente.beans.ClienteBean;
+import com.unicon.api.cliente.beans.ContactoBean;
+import com.unicon.api.cliente.beans.ResponseBean;
+import com.unicon.api.cliente.beans.ResponseContactoBean;
 import com.unicon.api.cliente.mapper.IClienteMapper;
 import com.unicon.api.commons.db.dao.DaoApplication;
 import com.unicon.api.commons.db.dao.enums.EConnectionType;
@@ -16,8 +19,8 @@ public class ClienteDao extends DaoApplication<ClienteBean, IClienteMapper> {
      *
      * @param idMarca
      */
-    public ClienteDao(String idMarca) {
-        super(idMarca);
+    public ClienteDao(int idMarca) {
+        super(String.valueOf(idMarca));
     }
 
     /**
@@ -60,5 +63,14 @@ public class ClienteDao extends DaoApplication<ClienteBean, IClienteMapper> {
      */
     public List<ClienteBean> selectClientesByName() {
         return queryList("selectClientesByName");
+    }
+
+    public ResponseBean registrarCliente(ClienteBean cliente) {
+        // return executeDml("registrarCliente", ClienteBean.class, cliente);
+        return executeDml("registrarCliente", cliente);
+    }
+
+    public ResponseContactoBean registrarClienteContacto(ContactoBean contacto) {
+        return executeDml("registrarClienteContacto", contacto);
     }
 }
