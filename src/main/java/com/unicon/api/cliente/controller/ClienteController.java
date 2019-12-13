@@ -2,9 +2,10 @@ package com.unicon.api.cliente.controller;
 
 import java.util.List;
 
-import com.unicon.api.cliente.beans.ClienteBean;
-import com.unicon.api.cliente.beans.ResponseBean;
+
 import com.unicon.api.cliente.service.IClienteService;
+import com.unicon.api.commons.beans.cliente.ClienteBean;
+import com.unicon.api.commons.beans.response.ResponseBean;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

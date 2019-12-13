@@ -1,7 +1,7 @@
 package com.unicon.api.cliente;
 
-import com.unicon.api.cliente.beans.ClienteBean;
 import com.unicon.api.cliente.dao.ClienteDao;
+import com.unicon.api.commons.beans.cliente.ClienteBean;
 import com.unicon.api.commons.db.dao.DaoApplication;
 import com.unicon.api.commons.db.dao.mapper.AppMapper;
 import lombok.extern.log4j.Log4j2;

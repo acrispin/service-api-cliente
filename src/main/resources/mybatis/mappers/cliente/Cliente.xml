@@ -3,7 +3,7 @@
 <mapper namespace="com.unicon.api.cliente.mapper.IClienteMapper">
 
     <!--@since 20191209 ACRISPIN | Mapper para clientes-->
-    <resultMap id="selectClientesByNameMap" type="com.unicon.api.cliente.beans.ClienteBean">
+    <resultMap id="selectClientesByNameMap" type="com.unicon.api.commons.beans.cliente.ClienteBean">
         <result property="codigo" column="codigo"/>
         <result property="razonSocial" column="razonSocial"/>
         <result property="direccion" column="direccion"/>
@@ -39,7 +39,7 @@
     </select>
 
     <!--@since 20191209 ACRISPIN | Mapper para clientes-->
-    <resultMap id="selectResultTypeMap" type="com.unicon.api.cliente.beans.ResponseBean">
+    <resultMap id="selectResultTypeMap" type="com.unicon.api.commons.beans.response.ResponseBean">
         <result property="estado" column="status"/>
         <result property="codigo" column="codigo"/>
         <result property="resultado" column="resultado"/>
@@ -70,7 +70,7 @@
     </select>
 
     <!--@since 20191209 ACRISPIN | Mapper para clientes-->
-    <resultMap id="selectResultTypeContactoMap" type="com.unicon.api.cliente.beans.ResponseContactoBean">
+    <resultMap id="selectResultTypeContactoMap" type="com.unicon.api.commons.beans.cliente.ResponseClienteContactoBean">
         <result property="codigoCliente" column="codigo_cliente"/>
         <result property="secuencia" column="secuencia"/>
         <result property="codigoUsuario" column="codigo_usuario"/>

@@ -1,9 +1,9 @@
 package com.unicon.api.cliente.service;
 
-import com.unicon.api.cliente.beans.ClienteBean;
-import com.unicon.api.cliente.beans.ContactoBean;
-import com.unicon.api.cliente.beans.ResponseBean;
-import com.unicon.api.cliente.beans.ResponseContactoBean;
+import com.unicon.api.commons.beans.cliente.ClienteBean;
+import com.unicon.api.commons.beans.cliente.ClienteContactoBean;
+import com.unicon.api.commons.beans.cliente.ResponseClienteContactoBean;
+import com.unicon.api.commons.beans.response.ResponseBean;
 
 import java.util.List;
 
@@ -15,8 +15,8 @@ public interface IClienteService {
 
     ResponseBean actualizarCliente(ClienteBean cliente);
 
-    ResponseContactoBean crearClienteContacto(ContactoBean contacto);
+    ResponseClienteContactoBean crearClienteContacto(ClienteContactoBean contacto);
 
-    ResponseContactoBean actualizarClienteContacto(ContactoBean contacto);
+    ResponseClienteContactoBean actualizarClienteContacto(ClienteContactoBean contacto);
 
 }

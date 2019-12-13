@@ -1,10 +1,10 @@
 package com.unicon.api.cliente.service;
 
-import com.unicon.api.cliente.beans.ClienteBean;
-import com.unicon.api.cliente.beans.ContactoBean;
-import com.unicon.api.cliente.beans.ResponseBean;
-import com.unicon.api.cliente.beans.ResponseContactoBean;
 import com.unicon.api.cliente.dao.ClienteDao;
+import com.unicon.api.commons.beans.cliente.ClienteBean;
+import com.unicon.api.commons.beans.cliente.ClienteContactoBean;
+import com.unicon.api.commons.beans.cliente.ResponseClienteContactoBean;
+import com.unicon.api.commons.beans.response.ResponseBean;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -29,14 +29,14 @@ public class ClienteService implements IClienteService {
     }
 
     @Override
-    public ResponseContactoBean crearClienteContacto(ContactoBean contacto) {
+    public ResponseClienteContactoBean crearClienteContacto(ClienteContactoBean contacto) {
         contacto.setSecuencia(null);
         contacto.setEstado(null);
         return new ClienteDao(contacto.getIdMarca()).registrarClienteContacto(contacto);
     }
 
     @Override
-    public ResponseContactoBean actualizarClienteContacto(ContactoBean contacto) {
+    public ResponseClienteContactoBean actualizarClienteContacto(ClienteContactoBean contacto) {
         return new ClienteDao(contacto.getIdMarca()).registrarClienteContacto(contacto);
     }
 }

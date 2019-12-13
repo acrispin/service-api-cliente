@@ -1,10 +1,10 @@
 package com.unicon.api.cliente.dao;
 
-import com.unicon.api.cliente.beans.ClienteBean;
-import com.unicon.api.cliente.beans.ContactoBean;
-import com.unicon.api.cliente.beans.ResponseBean;
-import com.unicon.api.cliente.beans.ResponseContactoBean;
 import com.unicon.api.cliente.mapper.IClienteMapper;
+import com.unicon.api.commons.beans.cliente.ClienteBean;
+import com.unicon.api.commons.beans.cliente.ClienteContactoBean;
+import com.unicon.api.commons.beans.cliente.ResponseClienteContactoBean;
+import com.unicon.api.commons.beans.response.ResponseBean;
 import com.unicon.api.commons.db.dao.DaoApplication;
 import com.unicon.api.commons.db.dao.enums.EConnectionType;
 import lombok.extern.log4j.Log4j2;
@@ -70,7 +70,7 @@ public class ClienteDao extends DaoApplication<ClienteBean, IClienteMapper> {
         return executeDml("registrarCliente", cliente);
     }
 
-    public ResponseContactoBean registrarClienteContacto(ContactoBean contacto) {
+    public ResponseClienteContactoBean registrarClienteContacto(ClienteContactoBean contacto) {
         return executeDml("registrarClienteContacto", contacto);
     }
 }
