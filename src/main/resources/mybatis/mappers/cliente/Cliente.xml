@@ -51,22 +51,22 @@
             parameterType="java.util.Map"
             resultMap="selectResultTypeMap">
         EXEC [api].[usp_registra_cliente]
-            @v_co_cli = #{codigo},
-            @rz_soc = #{razonSocial},
-            @di_obr = #{direccion},
-            @co_pos = #{codigoPostal},
-            @te_cli = #{telefono},
-            @ti_cal = #{tipoCalle},
-            @nu_cal = #{numeroCalle},
-            @no_urb = #{nombreUrbanizacion},
-            @ti_doc = #{tipoDocumento},
-            @nu_doc = #{numeroDocumento},
-            @ap_pat = #{apellidoPaterno},
-            @ap_mat = #{apellidoMaterno},
-            @nombre = #{nombre},
-            @cod_ve = #{codigoVendedor},
-            @estado = #{estado},
-            @co_ext = #{codigoExterno}
+            @p_co_cli = #{codigo},
+            @p_rz_soc = #{razonSocial},
+            @p_di_obr = #{direccion},
+            @p_co_pos = #{codigoPostal},
+            @p_te_cli = #{telefono},
+            @p_ti_cal = #{tipoCalle},
+            @p_nu_cal = #{numeroCalle},
+            @p_no_urb = #{nombreUrbanizacion},
+            @p_ti_doc = #{tipoDocumento},
+            @p_nu_doc = #{numeroDocumento},
+            @p_ap_pat = #{apellidoPaterno},
+            @p_ap_mat = #{apellidoMaterno},
+            @p_nombre = #{nombre},
+            @p_cod_ve = #{codigoVendedor},
+            @p_estado = #{estado},
+            @p_co_ext = #{codigoExterno}
     </select>
 
     <!--@since 20191209 ACRISPIN | Mapper para clientes-->
@@ -84,19 +84,19 @@
             parameterType="java.util.Map"
             resultMap="selectResultTypeContactoMap">
         EXEC [api].[usp_registra_cliente_contacto]
-            @co_cli = #{codigoCliente},
-            @v_se_rcl = #{secuencia},
-            @nombre = #{nombre},
-            @cargo = #{cargo},
-            @tl = #{telefono},
-            @tl2 = #{telefono2},
-            @email = #{email},
-            @dni = #{dni},
-            @in_fact_elec = #{indicadorFacturacionElectronica},
-            @aplld = #{apellido},
-            @co_ext = #{codigoExterno},
-            @estado = #{estado},
-            @co_usu = #{codigoUsuario}
+            @p_co_cli = #{codigoCliente},
+            @p_se_rcl = #{secuencia},
+            @p_nombre = #{nombre},
+            @p_cargo = #{cargo},
+            @p_tl = #{telefono},
+            @p_tl2 = #{telefono2},
+            @p_email = #{email},
+            @p_dni = #{dni},
+            @p_in_fact_elec = #{indicadorFacturacionElectronica},
+            @p_aplld = #{apellido},
+            @p_co_ext = #{codigoExterno},
+            @p_estado = #{estado},
+            @p_co_usu = #{codigoUsuario}
     </select>
 
 </mapper>
